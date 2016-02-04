@@ -1,14 +1,14 @@
 var app=angular.module('baby_parts',['ngResource', 'ngRoute']);
 
-/* app.config(function($routeProvider) {
+app.config(function($routeProvider) {
 	 $routeProvider
      .when('/', {
        redirectTo:'/login'
      })
 	 .when('/login', {
        templateUrl: 'login.html',
-      })
-      .when('/profile', {
+      }) ;
+      /*    .when('/profile', {
        templateUrl: 'profile.html',
       })
       .when('/home', {
@@ -34,8 +34,8 @@ var app=angular.module('baby_parts',['ngResource', 'ngRoute']);
       })
       .when('/collection-list', {
        templateUrl: 'collection-list.html',
-      });
+      });*/
       
-}); */
+}); 
 
 	   
