@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Babycache, Parts of Parts</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/font-awesome.css" />
+        <link rel="stylesheet" href="css/colorpicker.css" />
+		<link rel="stylesheet" href="css/icheck/flat/blue.css" />
+		<link rel="stylesheet" href="css/select2.css" />
+		<link rel="stylesheet" href="css/jquery-ui.css" />		
+		<link rel="stylesheet" href="css/unicorn.css" />
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/respond.min.js"></script>
+		<![endif]-->
+			
+	</head>	
+	<body data-color="grey" class="flat">
+		<div id="wrapper">
+			<div id="header">
+				<h1><a href="./index.html">Babycache, Parts of Parts</a></h1>	
+				<a id="menu-trigger" href="#"><i class="fa fa-bars"></i></a>	
+			</div>
+		
+			<div id="user-nav">
+	            <ul class="btn-group">
+	                <li class="btn" ><a title="" href="profile.html"><i class="fa fa-user"></i> <span class="text">Profile</span></a></li>	                
+	                <li class="btn"><a title="" href="login.html"><i class="fa fa-share"></i> <span class="text">Logout</span></a></li>
+	            </ul>
+	        </div>
+
+
+			<div id="sidebar">
+				<ul>
+					<li><a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+					<li>
+						<a href="orders.html"><i class="fa fa-shopping-cart"></i> <span>Orders</span></a>
+					</li>
+					<li class="submenu">
+						<a href="#"><i class="fa fa-cogs"></i> <span>Parts</span> <i class="arrow fa fa-chevron-right"></i></a>
+						<ul>
+							<li><a href="add-parts.html">Add Parts</a></li>
+							<li><a href="parts-list.html">Parts List</a></li>
+						</ul>
+					</li>	
+					<li class="submenu">
+						<a href="#"><i class="fa fa-user"></i> <span>Users</span> <i class="arrow fa fa-chevron-right"></i></a>
+						<ul>
+							<li><a href="add-users.html">Add Users</a></li>
+							<li><a href="users-list.html">Users List</a></li>
+						</ul>
+					</li>	
+					<li class="submenu">
+						<a href="#"><i class="fa fa-user"></i> <span>Collection</span> <i class="arrow fa fa-chevron-right"></i></a>
+						<ul>
+							<li><a href="add-collection.html">Add Collection</a></li>
+							<li><a href="collection-list.html">Collection List</a></li>
+						</ul>
+					</li>															
+				</ul>
+			
+			</div>
+			
+			<div id="content">
+				<div id="content-header" class="mini">
+					<h1>Profile</h1>
+				</div>
+				<div id="breadcrumb">
+					<a href="index.html" title="Go to Home" class="tip-bottom"><i class="fa fa-home"></i> Home</a>
+					<a href="#" class="current">Profile</a>
+				</div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="widget-box">
+								<div class="widget-title">
+									<span class="icon">
+										<i class="fa fa-align-justify"></i>									
+									</span>
+									<h5>Profile</h5>
+								</div>
+								<div class="widget-content nopadding">
+									<form action="#" method="get" class="form-horizontal">
+											<div class="form-group">
+												<label class="col-sm-3 col-md-3 col-lg-2 control-label">Name</label>
+												<div class="col-sm-9 col-md-6 col-lg-6">
+													<input type="text" class="form-control input-sm" placeholder="Enter Your Name..."  value="Rohit Jain"/>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-3 col-md-3 col-lg-2 control-label">Email</label>
+												<div class="col-sm-9 col-md-6 col-lg-6">
+													<input type="text" class="form-control input-sm" placeholder="Enter Your Email..."  value="rohitjain3@hotmail.com"/>
+												</div>
+											</div>	
+											<div class="form-group">
+												<label class="col-sm-3 col-md-3 col-lg-2 control-label">Username</label>
+												<div class="col-sm-9 col-md-6 col-lg-6">
+													<input type="text" class="form-control input-sm" placeholder="Enter Your Username..."  value="rohit"/>
+												</div>
+											</div>												
+											<div class="form-group">
+												<label class="col-sm-3 col-md-3 col-lg-2 control-label">Password</label>
+												<div class="col-sm-9 col-md-6 col-lg-6">
+													<input type="password" class="form-control input-sm" placeholder="Enter Your Password..."  value=""/>
+												</div>
+											</div>	
+											<div class="form-group">
+												<label class="col-sm-3 col-md-3 col-lg-2 control-label">Re-Enter Password</label>
+												<div class="col-sm-9 col-md-6 col-lg-6">
+													<input type="password" class="form-control input-sm" placeholder="Re-Enter Your Password..."  value=""/>
+												</div>
+											</div>											
+											<div class="form-group">
+												<div class="col-md-offset-2 col-sm-12 col-md-12 col-lg-12">
+												<button class="btn btn-dark-blue">Update</button>
+												</div>
+											</div>
+									</form>	
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+			</div>
+			<div class="row">
+				<div id="footer" class="col-xs-12">
+					2016 &copy; Babycache
+				</div>
+			</div>
+		</div>
+
+            <script src="js/jquery.min.js"></script>
+            <script src="js/jquery-ui.custom.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/bootstrap-colorpicker.js"></script>
+            <script src="js/bootstrap-datepicker.js"></script>
+            <script src="js/jquery.icheck.min.js"></script>
+            <script src="js/select2.min.js"></script>
+            
+            <script src="js/jquery.nicescroll.min.js"></script>
+            <script src="js/unicorn.js"></script>
+            <script src="js/unicorn.form_common.js"></script>
+	</body>
+</html>
