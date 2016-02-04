@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="ng-app" ng-app="baby_parts">
 	<head>
 		<title>Babycache, Parts of Parts</title>
 		<meta charset="UTF-8" />
@@ -62,7 +62,7 @@
 			
 			</div>
 			
-			<div id="content">
+			<div id="content" ng-controller="userCtrl">
 				<div id="content-header" class="mini">
 					<h1>Users List</h1>
 				</div>
@@ -94,14 +94,16 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>Rohit Jain</td>
-											<td>rohitjain3@hotmail.com</td>
-											<td>rohit</td>
-											<td>9874563210</td>
-											<td align="center"><a href="#"><i class="fa fa-check"></i></a></td>
-											<td align="center"><a href="#"><i class="fa fa-edit"></i></a> <a href="#"><i class="fa fa-trash-o"></i></a></td>
+										<tr ng-repeat="users in usr_list" ng-show="valuesshow">
+											<td>{{users.usr_fname}} {{users.usr_mname}} {{users.usr_lname}}</td>
+											<td>{{users.usr_mail}}</td>
+											<td>{{users.usr_name}}</td>
+											<td>{{users.usr_phone}}</td>
+											<td align="center"  ng-if="users.usr_status == 1"><i class="fa fa-check green" ng-click="chkStatus('0')"></i></td>
+											<td align="center"  ng-if="users.usr_status == 0"><i class="fa fa-times red"  ng-click="chkStatus('1')"></i></td>
+											<td align="center"><i class="fa fa-edit blue"></i><i class="fa fa-trash-o red"></i></td>
 										</tr>
+										 <tr ng-show="valuesnull"><td colspan="12"> No data found</td></tr>
 									</tbody>
 								</table>							
 							</div>
@@ -131,5 +133,12 @@
             <script src="js/jquery.nicescroll.min.js"></script>
             <script src="js/unicorn.js"></script>
             <script src="js/unicorn.form_common.js"></script>
+            
+            <script src="/js/angular.js"></script>
+			<script src="/js/angular-route.js"></script>
+			<script src="/js/angular-resource.js"></script>
+			<script src="/js/angularmd5.js"></script>
+			<script src="/controllers/appCtrl.js"></script>
+			<script src="/controllers/userCtrl.js"></script>
 	</body>
 </html>

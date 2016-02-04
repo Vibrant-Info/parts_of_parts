@@ -76,18 +76,12 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="widget-box">
-							<div class="row" ng-show="successmsgshow">
+							<div class="row" ng-show="msgshow">
 								<div class="col-md-12">
-									<div class="alert alert-success text-center">User added
-										successfully</div>
+									<div class="alert {{classShow}} text-center ">{{msg}}</div>
 								</div>
 							</div>
-							<div class="row" ng-show="errmsgshow">
-								<div class="col-md-12">
-									<div class="alert alert-danger text-center">Something went wrong </div>
-								</div>
-								
-							</div>
+							
 							<div class="widget-title">
 								<span class="icon"> <i class="fa fa-align-justify"></i>
 								</span>
@@ -100,7 +94,7 @@
 										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Name</label>
 										<div class="col-sm-2 col-md-2 col-lg-2">
 											<input type="text" class="form-control input-sm"
-												placeholder="First Name..." ng-model="user.usr_fname" />
+												placeholder="First Name..." ng-model="user.usr_fname" required/>
 										</div>
 										<div class="col-sm-2 col-md-2 col-lg-2">
 											<input type="text" class="form-control input-sm"
@@ -108,13 +102,13 @@
 										</div>
 										<div class="col-sm-2 col-md-2 col-lg-2">
 											<input type="text" class="form-control input-sm"
-												placeholder="Last Name..." ng-model="user.usr_lname" />
+												placeholder="Last Name..." ng-model="user.usr_lname" required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Gender</label>
 										<div class="col-sm-9 col-md-9 col-lg-10">
-											<select ng-model="user.usr_gender">
+											<select ng-model="user.usr_gender" required>
 												<option value="Male">Male</option>
 												<option value="Female">Female</option>
 											</select>
@@ -124,55 +118,52 @@
 										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Email
 											Id</label>
 										<div class="col-sm-9 col-md-6 col-lg-6">
-											<input type="text" class="form-control input-sm"
-												placeholder="Enter Your Email..." ng-model="user.usr_mail" />
+											<input type="email" class="form-control input-sm" name="mail" placeholder="Enter Your Email..." ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-model="user.usr_mail" required/>
+											 <span style='color:red' ng-show="user_form.mail.$error.pattern">Not a valid email!</span> 
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Username</label>
 										<div class="col-sm-9 col-md-6 col-lg-6">
-											<input type="text" class="form-control input-sm"
-												placeholder="Enter Your Username..."
-												ng-model="user.usr_name" />
+											<input type="text" class="form-control input-sm" placeholder="Enter Your Username..."
+												ng-model="user.usr_name" required />
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Phone</label>
 										<div class="col-sm-9 col-md-6 col-lg-6">
-											<input type="text" class="form-control input-sm"
-												placeholder="Enter Your Phone Number..."
-												ng-model="user.usr_phone" />
+											<input type="text" class="form-control input-sm" placeholder="Enter Your Phone Number..."
+												ng-model="user.usr_phone" required />
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Password</label>
 										<div class="col-sm-9 col-md-6 col-lg-6">
-											<input type="password" class="form-control input-sm" id="pwd"
-												placeholder="Enter Your Password..." ng-model="user.usr_pwd" />
+											<input type="password" class="form-control input-sm {{errClass}}" id="pwd"
+												placeholder="Enter Your Password..." ng-model="user.usr_pwd" required/>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Re-Enter
-											Password</label>
+										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Re-Enter Password</label>
 										<div class="col-sm-9 col-md-6 col-lg-6">
-											<input type="password" class="form-control input-sm" id="repwd"
-												placeholder="Re-Enter Your Password..." ng-model="repwd" />
+											<input type="password" class="form-control input-sm {{errClass}}"
+												placeholder="Re-Enter Your Password..." ng-model="repwd" required/>
 											<span style='color:red' ng-show="pwderr">Password does not match</span>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Address</label>
 										<div class="col-sm-6 col-md-6 col-lg-6">
-											<textarea class="form-control" rows="5"
-												ng-model="user.usr_addr"></textarea>
+											<textarea class="form-control" rows="5"	ng-model="user.usr_addr" required></textarea>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-3 col-md-3 col-lg-2 control-label">Status</label>
 										<div class="col-sm-9 col-md-9 col-lg-10">
-											<select ng-model="user.usr_status">
-												<option value="1">Active</option>
-												<option value="0">Inactive</option>
+											<select ng-model="user.usr_type" >
+												<option value=" ">Select User Type</option>
+												<option value="1">Admin</option>
+												<option value="2">User</option>
 											</select>
 										</div>
 									</div>
@@ -211,6 +202,7 @@
 	<script src="/js/angular.js"></script>
 	<script src="/js/angular-route.js"></script>
 	<script src="/js/angular-resource.js"></script>
+	<script src="/js/angularmd5.js"></script>
 	<script src="/controllers/appCtrl.js"></script>
 	<script src="/controllers/userCtrl.js"></script>
 </body>

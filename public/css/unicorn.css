@@ -5914,3 +5914,18 @@ body[data-color="purple"].flat .ui-dialog .ui-dialog-titlebar {
   margin-left: 10px;
 }
 }
+.error{
+	border:1px solid red !important;
+}
+.red{
+	color:red;
+	font-size:20px;
+}
+.green{
+	color:green;
+	font-size:20px;
+}
+.blue{
+	color:blue;
+	font-size:20px;
+}

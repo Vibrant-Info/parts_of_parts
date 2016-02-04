@@ -1,4 +1,4 @@
-var app=angular.module('baby_parts',['ngResource', 'ngRoute']);
+var app=angular.module('baby_parts',['ngResource', 'ngRoute','angular-md5']);
 
 app.config(function($routeProvider) {
 	 $routeProvider
