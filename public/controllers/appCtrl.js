@@ -1,6 +1,6 @@
 var app=angular.module('baby_parts',['ngResource', 'ngRoute']);
 
-app.config(function($routeProvider) {
+/* app.config(function($routeProvider) {
 	 $routeProvider
      .when('/', {
        redirectTo:'/login'
@@ -36,6 +36,6 @@ app.config(function($routeProvider) {
        templateUrl: 'collection-list.html',
       });
       
-});
+}); */
 
 	   
